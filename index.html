@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="ConStat: Performance-Based Contamination Detection in Large Language Models - Detect and quantify data contamination in benchmarks for more reliable model evaluation.">
+  <meta property="og:title" content="ConStat: Performance-Based Contamination Detection in Large Language Models"/>
+  <meta property="og:description" content="Learn about ConStat, a novel method to detect and quantify data contamination in large language models, ensuring more reliable benchmark evaluations.">
+  <meta property="og:url" content="https://constat.ai/"/>
+  <meta property="og:image" content="static/image/constat_banner_image.png" /> <!-- TODO -->
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="ConStat: Contamination Detection in Large Language Models">
+  <meta name="twitter:description" content="Discover ConStat, a statistical method for detecting and quantifying contamination in large language model benchmarks.">
+  <meta name="twitter:image" content="static/images/constat_twitter_banner_image.png"> <!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="ConStat, large language models, contamination detection, benchmarks, data contamination, model evaluation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <title>ConStat: Performance-Based Contamination Detection in Large Language Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.0.0/material-components-web.min.js">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0/es5/tex-mml-chtml.js">
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+  <script src="static/js/index.js"></script>
+  
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ConStat: Performance-Based Contamination Detection in Large Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.sri.inf.ethz.ch/people/jasper" target="_blank">Jasper Dekoninck</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.sri.inf.ethz.ch/people/mark" target="_blank">Mark Niklas Müller</a>,</span>
+                  <span class="author-block">
+                    <a href="https://www.sri.inf.ethz.ch/people/martin" target="_blank">Martin Vechev</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">SRI Lab @ ETH Zurich</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://www.sri.inf.ethz.ch/publications/dekoninck2024constat" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/eth-sri/ConStat" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video poster="" id="tree" autoplay controls muted loop height="100%">
+            <!-- Your video here -->
+            <source src="static/videos/intro.mp4"
+            type="video/mp4">
+          </video>
+          <!-- <h2 class="subtitle has-text-centered">
+            Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+          </h2> -->
+        </div>
+      </div>
+</div>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-justified">
+          <div class="table-info-box">
+            <b>Is your model contaminated? The table below shows the p-value indicating the likelihood of benchmark-specific (B), sample-specific (S) and syntax-specific (Y) contamination.</b>
+        </div>
+          <table id="myTopTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th rowspan="2">Model Name</th>
+                    <th colspan="3">ARC-Challenge</th>
+                    <th colspan="3">GSM8k</th>
+                    <th colspan="3">Hellaswag</th>
+                    <th colspan="2">MMLU</th>
+                    <!-- <th>GSM8k</th>
+                    <th>Hellaswag</th>
+                    <th rowspan="2">MMLU</th> -->
+                </tr>
+                <tr>
+                  <th>B</th>
+                  <th>S</th>
+                  <th>Y</th>
+                  <th>B</th>
+                  <th>S</th>
+                  <th>Y</th>
+                  <th>B</th>
+                  <th>S</th>
+                  <th>Y</th>
+                  <th>S</th>
+                  <th>Y</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      </div>
+      </div>
+</section>
+
+<!-- <section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-justified tldr">
+          <b>TL;DR</b>:
+          ConStat detects and quantifies contamination in LLMs based on a new performance-based definition of contamination. 
+          This enabled us to identify contamination in widely-used models.
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What consitutes contamination?</h2>
+        <div class="content has-text-justified">
+          <div class="caption">
+            We argue that in the context of LLMs, the traditional definition of contamination is not sufficient. 
+            We propose a new performance-based definition of contamination, which defines contamination based on its outcome rather than its cause.
+          </div>
+          <p>
+            <ul>
+              <li> In traditional machine learning, contamination refers to any information flow between the performance benchmark and model training. For LLMs, this usually means including test set samples or their equivalents in the training data.
+              <li> This narrow perspective has several flaws. First, it doesn't address the main issue: whether test set performance accurately predicts real-world performance. Second, in the era of zero-shot learning, we aim to measure performance on "unseen" tasks, yet we train on internet-scale data that likely contains samples of almost any task, making contamination thresholds unclear. Third, focusing only on test sample inclusion ignores other sources of contamination like model and hyperparameter selection based on benchmark performance.
+              <li> To overcome these limitations, we define contamination based on its outcome, rather than its cause. Informally, we define contamination as artificially inflated performance on a benchmark that does not generalize to real-world performance on the corresponding task. This definition aligns better with the practical implications of contamination and avoids the mentioned issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How to test for performance-based contamination?</h2>
+        <img src="static/images/figure.png" alt="ConStat Method">
+        <div class="content has-text-justified">
+          <div class="caption">
+            ConStat is a statistical method that tests for performance-based contamination in LLMs. Given a reference benchmark and reference models, 
+            it computes the likelihood of the observed performance of the model under the null hypothesis that the model is not contaminated.
+          </div>
+          <p>
+          <ul>
+            <li> We can detect performance-based contamination by comparing a model's performance on a benchmark to its performance on a reference benchmark. If the model performs much better on the benchmark, it is contaminated. Different reference benchmarks test different types of contamination:
+              <ul>
+                  <li> Rephrased samples test syntax-specific contamination.</li>
+                  <li> Samples from the same distribution test sample-specific contamination.</li>
+                  <li> Different benchmarks for the same task test benchmark-specific contamination.</li>
+              </ul>            
+              <li> Unfortunately, direct comparison of performance between the benchmarks is not sufficient, as the difficulty of the benchmark and its reference benchmark may differ. To account for this, we introduce the hardness correction function which maps a performance from the reference benchmark to an uncontaminated performance on the actual benchmark. We use several reference models to estimate this function.
+                <li> Combining these observations, we propose ConStat, which uses bootstrapping to create a confidence interval for expected benchmark performance without contamination using the hardness correction function. Comparing this expected performance to actual performance yields a p-value for contamination and an estimate \( \hat{\delta} \) of the contamination's influence by subtracting actual performance from predicted uncontaminated performance.          
+
+              </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How well does ConStat perform?</h2>
+        <div class="content has-text-justified">
+          <div class="caption">
+            In a controlled setting, we show that ConStat is much better at detecting and quantifying contamination than existing methods.
+          </div>
+          <p>
+            <ul>
+              <li> We finetuned 61 models with various hyperparameters on the ARC-Challenge, GSM8k, Hellaswag, and MMLU benchmarks. We then evaluated ConStat's ability to detect and quantify contamination in these models.
+              <li> ConStat significantly outperforms prior methods in detecting contamination. It detects contamination in 60 out of 61 models under sample-specific contamination.
+              <li> Previous methods cannot quantify the influence of contamination on performance. ConStat's estimates (\( \hat{\delta} \)) are well-calibrated and provide a reliable measure of contamination's impact on performance (\(r^2 = 0.94\)).
+          </ul>
+          </p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="columns is-centered">
+       <img src="static/images/delta_estimation.png" alt="ConStat Performance" width="700">
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Which popular models are contaminated?</h2>
+        <div class="content has-text-justified">
+          <div class="caption">
+            We use ConStat to detect and quantify contamination in several widely-used models. We find contamination in Mistral-7b, Llama-3-70B and Yi-34B.
+          </div>
+          <p>
+            <ul>
+              <li> Can we use ConStat to detect and quantify contamination in popular models? Yes! We evaluated over 40 models across four benchmarks. Our results show each model's performance, the p-value for contamination, the estimated influence of contamination (\( \hat{\delta} \)), and a 95% confidence lower bound of this estimate (\( \hat{\delta}_{0.95} \)).
+              <li> Several models, including Mistral-7b, Llama-3-70B, and Yi-34b, show significant contamination.
+              <li> We also find significant contamination in top models from the Open LLM Leaderboard. Therefore, be cautious when selecting models based on their leaderboard scores due to the impact of model selection.
+            </ul>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light" id="tableModels">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <table id="myTable" class="display">
+          <thead>
+              <tr>
+                  <th>Model Name</th>
+                  <th>Benchmark</th>
+                  <th>Type</th>
+                  <th>Performance [%]</th>
+                  <th>p-value [%]</th>
+                  <th>\( \hat{\delta} \) [%]</th>
+                  <th>\( \hat{\delta}_{0.95} \) [%]</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+        </div>
+      </div>
+      </div>
+      </div>
+</section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{dekoninck2024constat,
+        title={ConStat: Performance-Based Contamination Detection in Large Language Models}, 
+        author={Jasper Dekoninck and Mark Niklas Müller and Martin Vechev},
+        year={2024},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG}
+  }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          Website and project are part of the <b><a href="https://sri.inf.ethz.ch">Secure, Reliable and Intelligent
+              Systems Lab at ETH Zurich</a></b>.
+          <br>
+          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+            target="_blank">Academic Project Page Template</a>.
+          <br>
+          <br>
+          <img class="logos" src="static/images/footer.svg" alt="ETH & SRI Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' 
+  data-cf-beacon='{"token": "7bd3fd9fa4364e41be6356f27688372d"}'></script> -->
+<!-- End Cloudflare Web Analytics -->
+<!-- TODO -->
+
+  </body>
+  </html>
